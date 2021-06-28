@@ -1,7 +1,5 @@
 // The prime factors of 13195 are 5, 7, 13 and 29.
 // What is the largest prime factor of the number 600851475143 ?
-open System
-
 let isPrime (n: int64) =
   let sqrt' = (float >> sqrt >> int64) n
   [ 2L .. sqrt']
@@ -19,5 +17,4 @@ let rec primeFactor (num: int64, divider: int64): int64 =
   elif isPrime(num) then num
   else primeFactor(num, (nextPrime divider))
 
-let is = primeFactor(600851475143L, 2L)
-printfn "%d" is
+printfn "%d" primeFactor(600851475143L, 2L)
